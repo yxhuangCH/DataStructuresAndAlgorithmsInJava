@@ -65,6 +65,19 @@ public class BinaryTree {
 		}
 	}
 	
+	public Node minimum(){
+		Node current, last;
+		current = root;
+		last = root;
+		while(current != null){
+			last = current;
+			current = current.leftChild;   // go to  left child
+			// go to right child
+//			current = current.rightChild;
+		}
+		return last;
+	}
+	
 	/**
 	 *  Delete node with given key (assume non-empty list)
 	 * @param key
