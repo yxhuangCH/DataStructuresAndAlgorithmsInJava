@@ -33,7 +33,7 @@ public class LinearProbeHashTable {
 	}
 	
 	public void insert(DataItem item){
-		// assume table not null
+		// assume table not full
 		int key = item.getKey();
 		// hash the key until empty cell or -1
 		int hashVal = hashFunc(key);		
