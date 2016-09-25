@@ -5,12 +5,12 @@ package com.yxhuang.heaps;
  * @author Administrator
  *
  */
-public class Heap {
+public class HeapSort {
 	private Node[] heapArray;
 	private int maxSize;
 	private int currentSize;
 	
-	public Heap(int mx){
+	public HeapSort(int mx){
 		maxSize = mx;
 		currentSize = 0;
 		heapArray = new Node[maxSize];
@@ -90,17 +90,6 @@ public class Heap {
 	}
 	
 	public void displayHeap(){
-		System.out.println("heapArray: ");
-		for (int i = 0; i < currentSize; i++) {
-			if (heapArray[i] != null) {
-				System.out.print(heapArray[i].getKey() + "  ");
-			} else {
-				System.out.println("---");
-			}
-		}
-		
-		System.out.println("");
-		
 		// heap format
 		int nBlanks = 32;
 		int itemsPerRow = 1;
@@ -117,6 +106,7 @@ public class Heap {
 			}
 			// display item
 			System.out.print(heapArray[j].getKey());
+			
 			if (++j == currentSize) {
 				break;
 			}
@@ -131,8 +121,27 @@ public class Heap {
 					System.out.print("  ");		// insert blanks
 				}
 			}
-		}
+		}  
 		
 		System.out.println("\n" + dots + dots);   // dotted bottom line
 	}
+	
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	// HeapSort.java 才有的方法
+	public void displayArray(){
+		for(int i = 0; i < maxSize; i++){
+			System.out.print(heapArray[i].getKey() +" ");
+		}
+		System.out.println("  ");
+	}
+	
+	public void insertAt(int index, Node newNode){
+		heapArray[index] = newNode;
+	}
+	
+	public void incrementSize(){
+		currentSize++;
+	}
+
 }
