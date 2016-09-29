@@ -121,7 +121,7 @@ public class HeapSort {
 					System.out.print("  ");		// insert blanks
 				}
 			}
-		}  
+		}    
 		
 		System.out.println("\n" + dots + dots);   // dotted bottom line
 	}
